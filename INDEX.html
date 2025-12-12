@@ -1,0 +1,1240 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GT Car Service - Профессиональный автосервис в Алматы</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #ffd700;
+        }
+
+        .logo span {
+            color: white;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 2rem;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            cursor: pointer;
+        }
+
+        nav ul li a:hover {
+            color: #ffd700;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.6);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .btn {
+            display: inline-block;
+            background: #ff6b35;
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #e55a2b;
+        }
+
+        /* Services */
+        .services {
+            padding: 5rem 0;
+            background: white;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: #2a5298;
+            margin-bottom: 1rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            color: #2a5298;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        /* About */
+        .about {
+            padding: 5rem 0;
+            background: #f8f9fa;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: 2.5rem;
+            color: #2a5298;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        /* Calculator Section */
+        .calculator {
+            padding: 5rem 0;
+            background: white;
+        }
+
+        .calculator-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #f8f9fa;
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .calculator-step {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 8px;
+            border-left: 4px solid #2a5298;
+        }
+
+        .calculator-step h3 {
+            margin-bottom: 1rem;
+            color: #2a5298;
+        }
+
+        .service-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-option {
+            padding: 1rem;
+            background: #f0f0f0;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+        }
+
+        .service-option:hover {
+            background: #e0e0e0;
+        }
+
+        .service-option.selected {
+            background: #2a5298;
+            color: white;
+        }
+
+        .result-box {
+            background: #2a5298;
+            color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .total-price {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #ffd700;
+            margin: 1rem 0;
+        }
+
+        /* Contacts */
+        .contacts {
+            padding: 5rem 0;
+            background: white;
+        }
+
+        .contacts-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-info {
+            background: #2a5298;
+            color: white;
+            padding: 3rem;
+            border-radius: 10px;
+        }
+
+        .contact-info h3 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: #ffd700;
+        }
+
+        .contact-item {
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-item i {
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            color: #ffd700;
+        }
+
+        .contact-form {
+            background: #f8f9fa;
+            padding: 3rem;
+            border-radius: 10px;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        /* Map Container */
+        .map-container {
+            margin-top: 2rem;
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+
+        .map-container h3 {
+            margin-bottom: 1rem;
+            color: #2a5298;
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        /* Modal - ИСПРАВЛЕННЫЙ СТИЛЬ */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 1000;
+        }
+
+        .modal.active {
+            display: block !important;
+        }
+
+        .modal-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            max-width: 600px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            z-index: 1001;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #2a5298;
+        }
+
+        .close-modal {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #666;
+        }
+
+        .appointment-list {
+            max-height: 300px;
+            overflow-y: auto;
+            margin-bottom: 1.5rem;
+        }
+
+        .appointment-item {
+            background: #f8f9fa;
+            padding: 1rem;
+            margin-bottom: 0.5rem;
+            border-radius: 5px;
+            border-left: 3px solid #2a5298;
+        }
+
+        /* WhatsApp Button */
+        .whatsapp-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25D366;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+            z-index: 999;
+            transition: all 0.3s;
+        }
+
+        .whatsapp-button:hover {
+            background: #128C7E;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+        }
+
+        .whatsapp-button img {
+            width: 30px;
+            height: 30px;
+        }
+
+        /* Notification */
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 15px 20px;
+            border-radius: 8px;
+            color: white;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            animation: slideIn 0.3s ease;
+            min-width: 300px;
+        }
+
+        .notification-success {
+            background: #28a745;
+        }
+
+        .notification-info {
+            background: #17a2b8;
+        }
+
+        .notification-error {
+            background: #dc3545;
+        }
+
+        .notification button {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            padding: 0;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        /* Stats in footer */
+        .stats {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-top: 1rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav ul {
+                margin-top: 1rem;
+                flex-direction: column;
+            }
+
+            nav ul li {
+                margin: 0.5rem 0;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .about-content,
+            .contacts-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                height: 60vh;
+            }
+
+            .calculator-container {
+                padding: 1.5rem;
+            }
+
+            .service-options {
+                grid-template-columns: 1fr;
+            }
+
+            .whatsapp-button {
+                bottom: 20px;
+                right: 20px;
+                padding: 12px 20px;
+                font-size: 0.9rem;
+            }
+
+            .whatsapp-button img {
+                width: 25px;
+                height: 25px;
+            }
+
+            .modal-content {
+                width: 95%;
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">GT<span>CarService</span></div>
+                <nav>
+                    <ul>
+                        <li><a href="#services">Услуги</a></li>
+                        <li><a href="#calculator">Калькулятор</a></li>
+                        <li><a href="#about">О нас</a></li>
+                        <li><a href="#contacts">Контакты</a></li>
+                        <li><a href="#" id="showRecordsBtn">Мои записи</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Профессиональный автосервис в Алматы</h1>
+                <p>Качественный ремонт и обслуживание автомобилей любой сложности. Работаем с 2025 года.</p>
+                <a href="#contacts" class="btn">Записаться на обслуживание</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Наши услуги</h2>
+                <p>Полный спектр услуг по ремонту и обслуживанию автомобилей</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🔧</div>
+                    <h3>Диагностика</h3>
+                    <p>Компьютерная диагностика двигателя, ходовой части и электронных систем</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🛢️</div>
+                    <h3>Техобслуживание</h3>
+                    <p>Регулярное техническое обслуживание и замена расходных материалов</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🚗</div>
+                    <h3>Ремонт двигателя</h3>
+                    <p>Капитальный и текущий ремонт двигателей любой сложности</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">⚡</div>
+                    <h3>Электрика</h3>
+                    <p>Диагностика и ремонт электрооборудования автомобиля</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🛞</div>
+                    <h3>Шиномонтаж</h3>
+                    <p>Сезонная замена шин, балансировка и ремонт колес</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🎛️</div>
+                    <h3>Чип-тюнинг</h3>
+                    <p>Настройка ЭБУ для улучшения характеристик</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculator Section -->
+    <section id="calculator" class="calculator">
+        <div class="container">
+            <div class="section-title">
+                <h2>Калькулятор стоимости</h2>
+                <p>Рассчитайте примерную стоимость услуг</p>
+            </div>
+
+            <div class="calculator-container">
+                <!-- Step 1: Выбор услуги -->
+                <div class="calculator-step">
+                    <h3>1. Выберите основную услугу</h3>
+                    <div class="service-options">
+                        <div class="service-option" data-price="5000" data-service="Диагностика">
+                            <strong>Диагностика</strong><br>
+                            <span>от 5 000 ₸</span>
+                        </div>
+                        <div class="service-option" data-price="15000" data-service="Техобслуживание">
+                            <strong>Техобслуживание</strong><br>
+                            <span>от 15 000 ₸</span>
+                        </div>
+                        <div class="service-option" data-price="30000" data-service="Ремонт двигателя">
+                            <strong>Ремонт двигателя</strong><br>
+                            <span>от 30 000 ₸</span>
+                        </div>
+                        <div class="service-option" data-price="10000" data-service="Электрика">
+                            <strong>Электрика</strong><br>
+                            <span>от 10 000 ₸</span>
+                        </div>
+                        <div class="service-option" data-price="8000" data-service="Шиномонтаж">
+                            <strong>Шиномонтаж</strong><br>
+                            <span>от 8 000 ₸</span>
+                        </div>
+                        <div class="service-option" data-price="25000" data-service="Чип-тюнинг">
+                            <strong>Чип-тюнинг</strong><br>
+                            <span>от 25 000 ₸</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2: Дополнительные услуги -->
+                <div class="calculator-step">
+                    <h3>2. Дополнительные услуги (опционально)</h3>
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" id="washing" data-price="3000">
+                            Мойка автомобиля (+3 000 ₸)
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" id="polishing" data-price="15000">
+                            Полировка кузова (+15 000 ₸)
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" id="tuning" data-price="20000">
+                            Тюнинг (+20 000 ₸)
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Step 3: Срочность -->
+                <div class="calculator-step">
+                    <h3>3. Срочность выполнения</h3>
+                    <div class="form-group">
+                        <select id="urgency">
+                            <option value="1">Обычная (без доплаты)</option>
+                            <option value="1.3">Срочно (+30%)</option>
+                            <option value="1.5">Очень срочно (+50%)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Результат -->
+                <div class="result-box">
+                    <h3>Примерная стоимость</h3>
+                    <div class="total-price" id="totalPrice">0 ₸</div>
+                    <p id="selectedServices">Выберите услуги для расчета</p>
+                    <button class="btn" id="saveCalcBtn">Сохранить расчет</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>О нашем сервисе</h2>
+                    <p>GT Car Service - это современный автосервис в Алматы, оснащенный передовым оборудованием и укомплектованный опытными специалистами.</p>
+                    <p>Мы работаем с 2025 года и за это время заслужили немало хороших отзывов о нас.</p>
+                    <p>Наши мастера регулярно проходят обучение и повышают квалификацию.</p>
+                    <a href="#contacts" class="btn">Связаться с нами</a>
+                </div>
+
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1621461133947-f63381c2f7f8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1974&q=80" alt="Наш автосервис">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacts -->
+    <section id="contacts" class="contacts">
+        <div class="container">
+            <div class="section-title">
+                <h2>Контакты</h2>
+                <p>Свяжитесь с нами удобным для вас способом</p>
+            </div>
+
+            <div class="contacts-grid">
+                <!-- Left Info -->
+                <div class="contact-info">
+                    <h3>Наши контакты</h3>
+
+                    <div class="contact-item">
+                        <i>📍</i>
+                        <div>
+                            <strong>Адрес:</strong><br>
+                            Алматы, ул. Ауэзова 126
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <i>📞</i>
+                        <div>
+                            <strong>Телефоны:</strong><br>
+                            <a href="tel:+77006461728" style="color: white;">+7 700 646 17 28 (Miras)</a><br>
+                            <a href="tel:+77472627236" style="color: white;">+7 747 262 7236 (Alexander)</a><br>
+                            <a href="tel:+77078333058" style="color: white;">+7 707 833 3058 (Rukhaniat)</a><br>
+                            <a href="tel:+77476880595" style="color: white;">+7 747 688 0595 (Елжан)</a><br>
+                            <a href="tel:+77475450701" style="color: white;">+7 747 545 0701 (Рамазан)</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <i>🕒</i>
+                        <div>
+                            <strong>График работы:</strong><br>
+                            Пн-Пт: 9:00 - 19:00<br>
+                            Сб-Вс: 10:00 - 17:00
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form -->
+                <div class="contact-form">
+                    <h3>Форма обратной связи</h3>
+
+                    <form id="bookingForm">
+                        <div class="form-group">
+                            <label for="name">Ваше имя</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Телефон</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="car">Марка автомобиля</label>
+                            <input type="text" id="car" name="car">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="serviceType">Услуга</label>
+                            <select id="serviceType" name="service">
+                                <option value="">Выберите услугу</option>
+                                <option value="Диагностика">Диагностика</option>
+                                <option value="Техобслуживание">Техобслуживание</option>
+                                <option value="Ремонт двигателя">Ремонт двигателя</option>
+                                <option value="Электрика">Электрика</option>
+                                <option value="Шиномонтаж">Шиномонтаж</option>
+                                <option value="Чип-тюнинг">Чип-тюнинг</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="appointmentDate">Желаемая дата</label>
+                            <input type="date" id="appointmentDate" name="date" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Сообщение</label>
+                            <textarea id="message" name="message" placeholder="Опишите проблему..."></textarea>
+                        </div>
+
+                        <button type="button" class="btn" id="bookBtn">Записаться</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Map Section -->
+            <div class="map-container">
+                <h3>Мы на карте</h3>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2906.7764340735634!2d76.91270281548393!3d43.23500757913805!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3883692f027581ad%3A0x2426740f56437e63!2z0JDQvdC00YDQtdC50L3QsNGPINGD0L3QuNCy0LXRgNGB0LjRgtC10YIg0JzQsNC70LDQvdGB0L7QsiDQkNC70LXQutGB0LDQvdC00YDQsCwg0JDQu9C10LrRgdCw0L3QtNGA!5e0!3m2!1sru!2skz!4v1678887654321!5m2!1sru!2skz"
+                    width="100%"
+                    height="300"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 GT Car Service. Проект созданный студентами IITU.</p>
+            <p>Автосервис в Алматы | Ремонт и обслуживание автомобилей</p>
+            <div class="stats" id="footerStats"></div>
+        </div>
+    </footer>
+
+    <!-- Modal для просмотра записей -->
+    <div id="appointmentsModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Мои записи и расчеты</h3>
+                <button class="close-modal" id="closeModalBtn">✕</button>
+            </div>
+
+            <div class="appointment-list" id="appointmentList"></div>
+
+            <div class="calculator-list" id="calculatorList"></div>
+
+            <button class="btn" id="clearDataBtn" style="background: #dc3545; margin-top: 20px;">Очистить все данные</button>
+        </div>
+    </div>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/77006461728?text=Здравствуйте!%20Хочу%20записаться%20на%20ремонт%20автомобиля"
+       class="whatsapp-button"
+       target="_blank"
+       rel="noopener noreferrer">
+       <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+       <span>Написать в WhatsApp</span>
+    </a>
+
+    <script>
+        // === ПЕРЕМЕННЫЕ ===
+        let calculatorData = {
+            selectedService: null,
+            basePrice: 0,
+            additionalServices: [],
+            urgency: 1
+        };
+
+        // === ИНИЦИАЛИЗАЦИЯ ===
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Сайт загружен!');
+            
+            // Инициализация даты
+            initDate();
+            
+            // Инициализация калькулятора
+            initCalculator();
+            
+            // Инициализация формы записи
+            initBookingForm();
+            
+            // Инициализация модального окна
+            initModal();
+            
+            // Показать статистику
+            showStats();
+            
+            // Тестовое сообщение
+            setTimeout(() => {
+                showNotification('Добро пожаловать в GT Car Service!', 'info');
+            }, 1000);
+        });
+
+        // === КАЛЬКУЛЯТОР ===
+        function initCalculator() {
+            console.log('Инициализация калькулятора...');
+            
+            // 1. Выбор основной услуги
+            document.querySelectorAll('.service-option').forEach(option => {
+                option.addEventListener('click', function() {
+                    // Снимаем выделение
+                    document.querySelectorAll('.service-option').forEach(opt => {
+                        opt.classList.remove('selected');
+                    });
+                    
+                    // Добавляем выделение
+                    this.classList.add('selected');
+                    
+                    // Сохраняем данные
+                    calculatorData.selectedService = this.getAttribute('data-service');
+                    calculatorData.basePrice = parseInt(this.getAttribute('data-price'));
+                    
+                    // Обновляем форму
+                    document.getElementById('serviceType').value = calculatorData.selectedService;
+                    
+                    // Пересчитываем
+                    updateCalculator();
+                });
+            });
+            
+            // 2. Дополнительные услуги
+            document.getElementById('washing').addEventListener('change', updateCalculator);
+            document.getElementById('polishing').addEventListener('change', updateCalculator);
+            document.getElementById('tuning').addEventListener('change', updateCalculator);
+            
+            // 3. Срочность
+            document.getElementById('urgency').addEventListener('change', updateCalculator);
+            
+            // 4. Кнопка сохранения расчета
+            document.getElementById('saveCalcBtn').addEventListener('click', saveCalculation);
+            
+            console.log('Калькулятор инициализирован');
+        }
+
+        function updateCalculator() {
+            // Получаем данные
+            calculatorData.urgency = parseFloat(document.getElementById('urgency').value);
+            calculatorData.additionalServices = [];
+            
+            let additionalPrice = 0;
+            
+            if(document.getElementById('washing').checked) {
+                additionalPrice += 3000;
+                calculatorData.additionalServices.push('Мойка');
+            }
+            if(document.getElementById('polishing').checked) {
+                additionalPrice += 15000;
+                calculatorData.additionalServices.push('Полировка');
+            }
+            if(document.getElementById('tuning').checked) {
+                additionalPrice += 20000;
+                calculatorData.additionalServices.push('Тюнинг');
+            }
+            
+            // Рассчитываем сумму
+            let total = (calculatorData.basePrice + additionalPrice) * calculatorData.urgency;
+            
+            // Обновляем отображение
+            document.getElementById('totalPrice').textContent = Math.round(total).toLocaleString('ru-RU') + ' ₸';
+            
+            // Обновляем список услуг
+            let servicesText = '';
+            if(calculatorData.selectedService) {
+                servicesText = calculatorData.selectedService;
+                if(calculatorData.additionalServices.length > 0) {
+                    servicesText += ' + ' + calculatorData.additionalServices.join(', ');
+                }
+                if(calculatorData.urgency > 1) {
+                    servicesText += ' (срочно)';
+                }
+            } else {
+                servicesText = 'Выберите услуги для расчета';
+            }
+            
+            document.getElementById('selectedServices').textContent = servicesText;
+        }
+
+        function saveCalculation() {
+            if(!calculatorData.selectedService) {
+                showNotification('Сначала выберите основную услугу!', 'error');
+                return;
+            }
+            
+            const calculation = {
+                id: Date.now(),
+                date: new Date().toLocaleString('ru-RU'),
+                service: calculatorData.selectedService,
+                additional: calculatorData.additionalServices,
+                urgency: calculatorData.urgency,
+                price: Math.round((calculatorData.basePrice + 
+                    calculatorData.additionalServices.reduce((acc, service) => {
+                        if(service === 'Мойка') return acc + 3000;
+                        if(service === 'Полировка') return acc + 15000;
+                        if(service === 'Тюнинг') return acc + 20000;
+                        return acc;
+                    }, 0)) * calculatorData.urgency)
+            };
+            
+            // Сохраняем в LocalStorage
+            let calculations = JSON.parse(localStorage.getItem('carServiceCalculations')) || [];
+            calculations.push(calculation);
+            localStorage.setItem('carServiceCalculations', JSON.stringify(calculations));
+            
+            showNotification('Расчет сохранен!');
+        }
+
+        // === ФОРМА ЗАПИСИ ===
+        function initDate() {
+            const tomorrow = new Date();
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            document.getElementById('appointmentDate').min = tomorrow.toISOString().split('T')[0];
+        }
+
+        function initBookingForm() {
+            document.getElementById('bookBtn').addEventListener('click', saveAppointment);
+        }
+
+        function saveAppointment() {
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const car = document.getElementById('car').value;
+            const service = document.getElementById('serviceType').value;
+            const date = document.getElementById('appointmentDate').value;
+            const message = document.getElementById('message').value;
+            
+            // Проверка
+            if(!name || !phone || !service || !date) {
+                showNotification('Заполните все обязательные поля!', 'error');
+                return;
+            }
+            
+            const appointment = {
+                id: Date.now(),
+                date: new Date().toLocaleString('ru-RU'),
+                name: name,
+                phone: phone,
+                car: car,
+                service: service,
+                appointmentDate: date,
+                message: message
+            };
+            
+            // Сохраняем
+            let appointments = JSON.parse(localStorage.getItem('carServiceAppointments')) || [];
+            appointments.push(appointment);
+            localStorage.setItem('carServiceAppointments', JSON.stringify(appointments));
+            
+            // Уведомления
+            showNotification('Заявка принята! Мы скоро свяжемся с вами.');
+            
+            // Имитация обработки
+            setTimeout(() => {
+                showNotification('Заявка обрабатывается...', 'info');
+            }, 2000);
+            
+            // Очищаем форму
+            document.getElementById('bookingForm').reset();
+            initDate();
+        }
+
+        // === МОДАЛЬНОЕ ОКНО ===
+        function initModal() {
+            // Кнопка показа
+            document.getElementById('showRecordsBtn').addEventListener('click', function(e) {
+                e.preventDefault();
+                showModal();
+            });
+            
+            // Кнопка закрытия
+            document.getElementById('closeModalBtn').addEventListener('click', closeModal);
+            
+            // Кнопка очистки
+            document.getElementById('clearDataBtn').addEventListener('click', clearAllData);
+            
+            // Закрытие по клику вне окна
+            document.getElementById('appointmentsModal').addEventListener('click', function(e) {
+                if(e.target.id === 'appointmentsModal') {
+                    closeModal();
+                }
+            });
+            
+            // Закрытие по ESC
+            document.addEventListener('keydown', function(e) {
+                if(e.key === 'Escape') {
+                    closeModal();
+                }
+            });
+        }
+
+        function showModal() {
+            console.log('Показываем модальное окно');
+            document.getElementById('appointmentsModal').classList.add('active');
+            loadAppointments();
+            loadCalculations();
+        }
+
+        function closeModal() {
+            document.getElementById('appointmentsModal').classList.remove('active');
+        }
+
+        function loadAppointments() {
+            const appointments = JSON.parse(localStorage.getItem('carServiceAppointments')) || [];
+            const list = document.getElementById('appointmentList');
+            
+            if(appointments.length === 0) {
+                list.innerHTML = '<p>Нет сохраненных записей</p>';
+                return;
+            }
+            
+            list.innerHTML = '<h4>Мои записи:</h4>';
+            appointments.forEach(app => {
+                const item = document.createElement('div');
+                item.className = 'appointment-item';
+                item.innerHTML = `
+                    <strong>${app.service}</strong><br>
+                    <small>${app.date}</small><br>
+                    Имя: ${app.name}<br>
+                    Телефон: ${app.phone}<br>
+                    Авто: ${app.car || 'Не указано'}<br>
+                    Дата: ${app.appointmentDate}<br>
+                    ${app.message ? `Сообщение: ${app.message}` : ''}
+                `;
+                list.appendChild(item);
+            });
+        }
+
+        function loadCalculations() {
+            const calculations = JSON.parse(localStorage.getItem('carServiceCalculations')) || [];
+            const list = document.getElementById('calculatorList');
+            
+            if(calculations.length === 0) {
+                list.innerHTML = '<p>Нет сохраненных расчетов</p>';
+                return;
+            }
+            
+            list.innerHTML = '<h4>Мои расчеты:</h4>';
+            calculations.forEach(calc => {
+                const item = document.createElement('div');
+                item.className = 'appointment-item';
+                item.innerHTML = `
+                    <strong>${calc.service}</strong><br>
+                    <small>${calc.date}</small><br>
+                    Дополнительно: ${calc.additional.join(', ') || 'нет'}<br>
+                    Срочность: ${calc.urgency > 1 ? 'Да (+' + Math.round((calc.urgency-1)*100) + '%)' : 'Нет'}<br>
+                    <strong>Итого: ${calc.price.toLocaleString('ru-RU')} ₸</strong>
+                `;
+                list.appendChild(item);
+            });
+        }
+
+        function clearAllData() {
+            if(confirm('Удалить все сохраненные данные? Это действие нельзя отменить!')) {
+                localStorage.removeItem('carServiceAppointments');
+                localStorage.removeItem('carServiceCalculations');
+                loadAppointments();
+                loadCalculations();
+                showNotification('Все данные очищены!', 'info');
+            }
+        }
+
+        // === УВЕДОМЛЕНИЯ ===
+        function showNotification(message, type = 'success') {
+            // Удаляем старые уведомления
+            document.querySelectorAll('.notification').forEach(n => n.remove());
+            
+            const notification = document.createElement('div');
+            notification.className = `notification notification-${type}`;
+            notification.innerHTML = `
+                <span>${message}</span>
+                <button onclick="this.parentElement.remove()">×</button>
+            `;
+            
+            document.body.appendChild(notification);
+            
+            // Автоудаление через 5 секунд
+            setTimeout(() => {
+                if(notification.parentElement) {
+                    notification.remove();
+                }
+            }, 5000);
+        }
+
+        // === СТАТИСТИКА ===
+        function showStats() {
+            let visitCount = localStorage.getItem('visitCount') || 0;
+            visitCount++;
+            localStorage.setItem('visitCount', visitCount);
+            
+            document.getElementById('footerStats').innerHTML = `
+                👁️ Посещений: ${visitCount} | 📅 ${new Date().toLocaleDateString('ru-RU')}
+            `;
+        }
+
+        // === ПЛАВНАЯ ПРОКРУТКА ===
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                if(this.getAttribute('href').startsWith('#')) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if(targetId !== '#') {
+                        const targetElement = document.querySelector(targetId);
+                        if(targetElement) {
+                            targetElement.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
